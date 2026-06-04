@@ -7,7 +7,7 @@ ATTENTION : NE PAS UTILISER EN PRODUCTION
 from flask import Flask, request, jsonify, render_template_string
 import sqlite3
 import subprocess
-import hashlib
+import bcrypt
 import os
 import yaml
 import requests
@@ -48,8 +48,8 @@ def init_db():
             description TEXT
         )
     """)
-    # Compte admin par défaut — VULN-03 : mot de passe faible hashé en MD5 (Bandit B324)
-    pw_hash = hashlib.md5(b"admin123").hexdigest()
+    # CORRIGÉ (B324) : hachage bcrypt (salé, lent) au lieu de MD5
+    pw_hash = bcrypt.hashpw(b"admin123", bcrypt.gensalt()).decode()
     conn.execute("INSERT OR IGNORE INTO users VALUES (1, 'admin', ?, 'admin')", (pw_hash,))
     conn.execute("INSERT OR IGNORE INTO products VALUES (1, 'Laptop', 999.99, 'Un super laptop')")
     conn.execute("INSERT OR IGNORE INTO products VALUES (2, 'Phone', 499.99, 'Un smartphone')")
@@ -62,16 +62,15 @@ def init_db():
 def login():
     username = request.form.get("username", "")
     password = request.form.get("password", "")
-    pw_hash = hashlib.md5(password.encode()).hexdigest()
 
     conn = get_db()
-    # Concaténation directe — injection SQL triviale
-    query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{pw_hash}'"
-    cursor = conn.execute(query)
+    # CORRIGÉ (B608) : requête paramétrée — plus d'injection SQL
+    cursor = conn.execute("SELECT * FROM users WHERE username = ?", (username,))
     user = cursor.fetchone()
     conn.close()
 
-    if user:
+    # CORRIGÉ (B324) : vérification du mot de passe via bcrypt
+    if user and bcrypt.checkpw(password.encode(), user[2].encode()):
         return jsonify({"status": "ok", "user": username, "role": user[3]})
     return jsonify({"status": "error", "message": "Identifiants invalides"}), 401
 
@@ -94,8 +93,8 @@ def search():
 @app.route("/ping")
 def ping():
     host = request.args.get("host", "localhost")
-    # Exécution shell avec entrée utilisateur non filtrée
-    result = subprocess.check_output(f"ping -c 1 {host}", shell=True)
+    # CORRIGÉ (B602) : arguments en liste, shell=False — plus d'injection de commande
+    result = subprocess.check_output(["ping", "-c", "1", host])
     return result.decode()
 
 

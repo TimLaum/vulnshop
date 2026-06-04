@@ -317,16 +317,50 @@ Sans cette dépendance, `trivy-image-scan` essaierait de scanner l'image **avant
 
 ## Partie 7 — Remédiation
 
-Trois vulnérabilités corrigées dans `app/app.py` :
+Objectif : corriger les vulnérabilités pour que les **quality gates du pipeline passent au vert**
+(Bandit 0 HIGH, Trivy 0 CVE CRITICAL fixable). Vérifié en local avant push.
+
+### Corrections dans `app/app.py`
 
 | Vuln | Ancienne ligne | Nouvelle ligne | Bandit ID |
 |------|---------------|----------------|-----------|
 | YAML non sécurisé | `yaml.load(config_data)` | `yaml.safe_load(config_data)` | B506 |
-| Flask debug en production | `app.run(debug=True, host="0.0.0.0", port=5000)` | `app.run(debug=False, host="0.0.0.0", port=5000)` | B201 |
+| Flask debug en production | `app.run(debug=True, ...)` | `app.run(debug=False, ...)` | B201 |
 | Vérification TLS désactivée | `requests.get(url, verify=False)` | `requests.get(url, verify=True)` | B501 |
+| MD5 (seed admin) | `hashlib.md5(b"admin123").hexdigest()` | `bcrypt.hashpw(b"admin123", bcrypt.gensalt())` | B324 |
+| MD5 (login) | `hashlib.md5(password.encode())...` | `bcrypt.checkpw(password.encode(), user[2].encode())` | B324 |
+| Injection commande OS | `subprocess.check_output(f"ping -c 1 {host}", shell=True)` | `subprocess.check_output(["ping", "-c", "1", host])` | B602 |
+| Injection SQL (bonus) | `f"... WHERE username = '{username}' ..."` | `conn.execute("... WHERE username = ?", (username,))` | B608 |
+
+### Corrections des dépendances (`app/requirements.txt`)
+
+Versions montées vers des releases patchées pour supprimer les CVE Trivy CRITICAL/HIGH :
+`Flask 2.0.1→3.0.3`, `Werkzeug 2.0.1→3.0.6`, `requests 2.25.0→2.32.3`,
+`PyYAML 5.3.1→6.0.2`, `Jinja2 3.0.1→3.1.4`, `cryptography 3.2.1→43.0.3`,
+`Pillow 8.1.0→10.4.0`, `urllib3 1.26.4→2.2.3` (+ `bcrypt 4.2.1` ajouté).
+
+### Corrections du `Dockerfile`
+
+- `RUN apt-get update && apt-get upgrade -y` : patche les CVE système (OpenSSL CVE-2026-31789, etc.)
+- `USER appuser` : conteneur non-root (corrige Trivy config **DS-0002**)
+- `HEALTHCHECK` ajouté (corrige Trivy config **DS-0026**)
 
 ### Question 7.1 : Impact des corrections sur Bandit et SonarQube
 
-Oui, le nombre d'issues Bandit **diminue immédiatement** (les 3 tests B506, B201, B501 disparaissent), passant de 5 HIGH à 2 HIGH.
+Oui, le nombre d'issues Bandit **diminue immédiatement**. Résultat vérifié en local :
+- Avant : 5 HIGH (B324 ×2, B602, B501, B201)
+- Après : **0 HIGH** → le gate `bandit --severity-level high` sort en code 0 (job vert).
+- Le gate Trivy CRITICAL (`--ignore-unfixed --exit-code 1`) sort aussi en code 0 : **0 CVE CRITICAL fixable**.
 
-SonarQube **ne reflète pas les changements immédiatement** : il faut relancer manuellement `sonar-scanner` ou pousser sur GitLab pour déclencher le pipeline. SonarQube est une analyse à la demande, non en temps réel.
+SonarQube **ne reflète pas les changements immédiatement** : il faut relancer `sonar-scanner`
+(ou pousser pour déclencher le pipeline). C'est une analyse à la demande, pas en temps réel.
+
+### Résultat attendu du pipeline après remédiation
+
+| Job | Avant | Après |
+|-----|-------|-------|
+| bandit-sast | 🔴 (5 HIGH) | 🟢 (0 HIGH) |
+| trivy-image-scan | 🔴 (CVE CRITICAL) | 🟢 (0 CRITICAL fixable) |
+| Tous les autres | 🟢 | 🟢 |
+
+→ Pipeline **entièrement vert** : c'est la capture d'écran du rendu n°5.
