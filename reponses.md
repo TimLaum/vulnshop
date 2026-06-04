@@ -347,13 +347,34 @@ Versions montées vers des releases patchées pour supprimer les CVE Trivy CRITI
 
 ### Question 7.1 : Impact des corrections sur Bandit et SonarQube
 
-Oui, le nombre d'issues Bandit **diminue immédiatement**. Résultat vérifié en local :
+**Côté Bandit : oui, le nombre d'issues diminue immédiatement.** Vérifié en local :
 - Avant : 5 HIGH (B324 ×2, B602, B501, B201)
 - Après : **0 HIGH** → le gate `bandit --severity-level high` sort en code 0 (job vert).
 - Le gate Trivy CRITICAL (`--ignore-unfixed --exit-code 1`) sort aussi en code 0 : **0 CVE CRITICAL fixable**.
 
-SonarQube **ne reflète pas les changements immédiatement** : il faut relancer `sonar-scanner`
-(ou pousser pour déclencher le pipeline). C'est une analyse à la demande, pas en temps réel.
+**Côté SonarQube : il ne reflète PAS les changements en temps réel.** Il a fallu relancer
+`sonar-scanner` (l'analyse est à la demande, pas continue). Comparaison avant/après re-scan :
+
+| Métrique SonarQube | Avant | Après | Commentaire |
+|--------------------|-------|-------|-------------|
+| Security Hotspots | 4 | **1** | Les 2 hotspots MD5 (lignes 52/65) disparaissent grâce à bcrypt ; il ne reste que le hotspot CSRF |
+| Vulnerabilities | 3 | **4** | ⚠️ une **nouvelle** apparaît (voir ci-dessous) |
+| Bugs | 0 | 0 | inchangé |
+| Reliability Rating | A | A | inchangé |
+| Security Rating | E | E | toujours E : des vulns BLOCKER subsistent |
+
+**Pourquoi les vulnérabilités SonarQube AUGMENTENT (3 → 4) ?**
+En remplaçant `hashlib.md5(b"admin123")` par `bcrypt.hashpw(b"admin123", …)`, le littéral
+`"admin123"` est resté dans le code. SonarQube le détecte maintenant via la règle **S6437**
+(« Revoke and change this password, as it is compromised. », ligne 52). Les 3 vulnérabilités
+d'origine (clé secrète Flask S6779, `DB_PASSWORD` S2068, bind `0.0.0.0` S8392) sont toujours là
+car non corrigées.
+
+**Enseignement clé :** Bandit et SonarQube ne mesurent pas la même chose. Le pipeline est vert
+(gates Bandit/Trivy OK), mais SonarQube continue de signaler des secrets codés en dur que Bandit
+ne classe qu'en LOW. Pour faire passer le **Security Rating de E à A**, il faudrait :
+- externaliser les secrets (`app.secret_key`, `DB_PASSWORD`, mot de passe admin) via variables d'environnement,
+- binder l'app sur une interface précise plutôt que `0.0.0.0`.
 
 ### Résultat attendu du pipeline après remédiation
 
