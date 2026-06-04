@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Base de données SQLite générée à l'exécution
+*.db
+vulnshop.db
+
+# Artefacts Docker
+vulnshop-image.tar
+*.tar
+
+# Cache SonarQube scanner
+.sonar/
+.scannerwork/
+
+# Rapport HTML généré par le pipeline (regénérable)
+security-report.html
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

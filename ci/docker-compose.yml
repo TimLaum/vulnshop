@@ -1,0 +1,76 @@
+# docker-compose.yml - Environnement de TP local
+# Démarre : SonarQube + VulnShop + PostgreSQL
+
+version: "3.8"
+
+services:
+
+  # ── Application vulnérable ──────────────────────────────────────────────────
+  vulnshop-app:
+    build:
+      context: ../app
+    container_name: vulnshop
+    ports:
+      - "5000:5000"
+    networks:
+      - tp-network
+    environment:
+      - FLASK_ENV=development
+
+  # ── SonarQube ───────────────────────────────────────────────────────────────
+  sonarqube:
+    image: sonarqube:community
+    container_name: sonarqube
+    depends_on:
+      - sonar-db
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://sonar-db:5432/sonar
+      SONAR_JDBC_USERNAME: sonar
+      SONAR_JDBC_PASSWORD: sonar
+    ports:
+      - "9000:9000"
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    networks:
+      - tp-network
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+
+  # ── Base PostgreSQL pour SonarQube ──────────────────────────────────────────
+  sonar-db:
+    image: postgres:15-alpine
+    container_name: sonar-db
+    environment:
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+      POSTGRES_DB: sonar
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    networks:
+      - tp-network
+
+  # ── GitLab Runner (auto-enregistrement) ────────────────────────────────────
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - gitlab_runner_config:/etc/gitlab-runner
+    networks:
+      - tp-network
+    restart: unless-stopped
+
+volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  postgresql_data:
+  gitlab_runner_config:
+
+networks:
+  tp-network:
+    driver: bridge

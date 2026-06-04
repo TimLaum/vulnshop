@@ -1,0 +1,201 @@
+# Pipeline DevSecOps VulnShop — GitHub Actions
+# Équivalent GitHub du .gitlab-ci.yml du TP
+# NE PAS UTILISER EN PRODUCTION
+
+name: DevSecOps Pipeline
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write   # nécessaire pour l'upload SARIF (onglet Security)
+
+jobs:
+
+  # ─── ÉTAPE 1 : Lint / qualité du code ──────────────────────────────────────
+  flake8-lint:
+    name: Lint (flake8)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - run: pip install flake8 --quiet
+      - name: flake8
+        run: flake8 app/ --max-line-length=120 --statistics --output-file=flake8-report.txt || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flake8-report
+          path: flake8-report.txt
+
+  # ─── ÉTAPE 2 : SAST — Bandit ───────────────────────────────────────────────
+  bandit-sast:
+    name: SAST (Bandit)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - run: pip install bandit --quiet
+      - name: Bandit — rapports (JSON + txt)
+        run: |
+          bandit -r app/ -f json -o bandit-report.json || true
+          bandit -r app/ -f txt  -o bandit-report.txt  || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bandit-report
+          path: |
+            bandit-report.json
+            bandit-report.txt
+      # TODO 6.1 : le job ÉCHOUE si Bandit détecte une vuln de sévérité HIGH
+      - name: Bandit — gate HIGH (bloquant)
+        run: bandit -r app/ --severity-level high
+
+  # ─── ÉTAPE 2bis : SAST — analyse des dépendances (pip-audit) ────────────────
+  pip-audit:
+    name: SCA (pip-audit)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - run: pip install pip-audit --quiet
+      - name: pip-audit (rapport JSON)
+        run: pip-audit -r app/requirements.txt -f json -o pip-audit-report.json || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pip-audit-report
+          path: pip-audit-report.json
+      - name: pip-audit (affichage console)
+        run: pip-audit -r app/requirements.txt || true
+
+  # ─── ÉTAPE 2ter : Trivy filesystem (deps Python, avant build) ──────────────
+  trivy-fs:
+    name: Trivy filesystem
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trivy fs (JSON)
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: fs
+          scan-ref: app/
+          severity: HIGH,CRITICAL
+          format: json
+          output: trivy-fs.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trivy-fs-report
+          path: trivy-fs.json
+
+  # ─── ÉTAPE 3 : Build de l'image Docker ─────────────────────────────────────
+  build-image:
+    name: Build Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: docker build -t vulnshop:${{ github.sha }} app/
+      - name: Sauvegarde de l'image (tar) pour le job de scan
+        run: docker save vulnshop:${{ github.sha }} -o vulnshop-image.tar
+      - uses: actions/upload-artifact@v4
+        with:
+          name: docker-image
+          path: vulnshop-image.tar
+          retention-days: 1
+
+  # ─── ÉTAPE 4 : Scan d'image Trivy ──────────────────────────────────────────
+  trivy-image-scan:
+    name: Trivy image scan
+    runs-on: ubuntu-latest
+    needs: build-image            # TODO 6.2 / Q6.2 : dépend du build
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: docker-image
+      - name: Charger l'image
+        run: docker load -i vulnshop-image.tar
+      - name: Trivy image (rapport JSON — non bloquant)
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: image
+          image-ref: vulnshop:${{ github.sha }}
+          severity: CRITICAL,HIGH,MEDIUM
+          format: json
+          output: trivy-image.json
+          exit-code: "0"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trivy-image-report
+          path: trivy-image.json
+      # TODO 6.2 : le job BLOQUE sur les CVE CRITICAL
+      - name: Trivy image — gate CRITICAL (bloquant)
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: image
+          image-ref: vulnshop:${{ github.sha }}
+          severity: CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+
+  # ─── ÉTAPE 4bis : Audit de configuration Dockerfile ───────────────────────
+  trivy-config:
+    name: Trivy config (Dockerfile)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trivy config
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: config
+          scan-ref: app/Dockerfile
+          format: json
+          output: trivy-config.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trivy-config-report
+          path: trivy-config.json
+
+  # ─── ÉTAPE 5 : Rapport consolidé ───────────────────────────────────────────
+  consolidate-report:
+    name: Rapport consolidé
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [bandit-sast, trivy-image-scan]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - run: pip install jinja2 --quiet
+      - uses: actions/download-artifact@v4
+        with:
+          name: bandit-report
+      - uses: actions/download-artifact@v4
+        with:
+          name: trivy-image-report
+      # generate_report.py attend bandit-report.json et trivy-image-report.json
+      - name: Adapter le nom de fichier attendu par le script
+        run: cp trivy-image.json trivy-image-report.json || true
+      - name: Générer le rapport HTML
+        run: python ci/generate_report.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: security-report
+          path: security-report.html

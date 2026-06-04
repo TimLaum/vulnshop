@@ -1,0 +1,3416 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.71.0"
+  },
+  "ReportID": "019e929f-328f-7a30-a73c-34645f6dd5fa",
+  "CreatedAt": "2026-06-04T12:32:47.247671158Z",
+  "ArtifactName": "/work/app",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "requirements.txt",
+      "Class": "lang-pkgs",
+      "Type": "pip",
+      "Packages": [
+        {
+          "Name": "Flask",
+          "Identifier": {
+            "PURL": "pkg:pypi/flask@2.0.1",
+            "UID": "eca5bbd5510a1f44"
+          },
+          "Version": "2.0.1",
+          "Locations": [
+            {
+              "StartLine": 4,
+              "EndLine": 4
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "Jinja2",
+          "Identifier": {
+            "PURL": "pkg:pypi/jinja2@3.0.1",
+            "UID": "2107dd16cbfef8d3"
+          },
+          "Version": "3.0.1",
+          "Locations": [
+            {
+              "StartLine": 8,
+              "EndLine": 8
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "Pillow",
+          "Identifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "Version": "8.1.0",
+          "Locations": [
+            {
+              "StartLine": 11,
+              "EndLine": 11
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "PyYAML",
+          "Identifier": {
+            "PURL": "pkg:pypi/pyyaml@5.3.1",
+            "UID": "ba0664b30349ab78"
+          },
+          "Version": "5.3.1",
+          "Locations": [
+            {
+              "StartLine": 7,
+              "EndLine": 7
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "SQLAlchemy",
+          "Identifier": {
+            "PURL": "pkg:pypi/sqlalchemy@1.3.23",
+            "UID": "4cda5bc6cbc28d52"
+          },
+          "Version": "1.3.23",
+          "Locations": [
+            {
+              "StartLine": 9,
+              "EndLine": 9
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "Werkzeug",
+          "Identifier": {
+            "PURL": "pkg:pypi/werkzeug@2.0.1",
+            "UID": "191cd2716e155311"
+          },
+          "Version": "2.0.1",
+          "Locations": [
+            {
+              "StartLine": 5,
+              "EndLine": 5
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "click",
+          "Identifier": {
+            "PURL": "pkg:pypi/click@8.0.1",
+            "UID": "b4c25d702ca92e8e"
+          },
+          "Version": "8.0.1",
+          "Locations": [
+            {
+              "StartLine": 14,
+              "EndLine": 14
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "cryptography",
+          "Identifier": {
+            "PURL": "pkg:pypi/cryptography@3.2.1",
+            "UID": "a30aea7d3b08e032"
+          },
+          "Version": "3.2.1",
+          "Locations": [
+            {
+              "StartLine": 10,
+              "EndLine": 10
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "itsdangerous",
+          "Identifier": {
+            "PURL": "pkg:pypi/itsdangerous@2.0.1",
+            "UID": "83119202accc75d5"
+          },
+          "Version": "2.0.1",
+          "Locations": [
+            {
+              "StartLine": 13,
+              "EndLine": 13
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "requests",
+          "Identifier": {
+            "PURL": "pkg:pypi/requests@2.25.0",
+            "UID": "7d91763b2140198e"
+          },
+          "Version": "2.25.0",
+          "Locations": [
+            {
+              "StartLine": 6,
+              "EndLine": 6
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "urllib3",
+          "Identifier": {
+            "PURL": "pkg:pypi/urllib3@1.26.4",
+            "UID": "d151e7a6a6c80369"
+          },
+          "Version": "1.26.4",
+          "Locations": [
+            {
+              "StartLine": 12,
+              "EndLine": 12
+            }
+          ],
+          "AnalyzedBy": "pip"
+        }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2023-30861",
+          "VendorIDs": [
+            "GHSA-m2qf-hxjv-5gpq"
+          ],
+          "PkgName": "Flask",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/flask@2.0.1",
+            "UID": "eca5bbd5510a1f44"
+          },
+          "InstalledVersion": "2.0.1",
+          "FixedVersion": "2.3.2, 2.2.5",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-30861",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:2de50ceefd1d5212db2a81c3bf0f8f872ae2711556de9d54b93baf19abfd799d",
+          "Title": "flask: Possible disclosure of permanent session cookie due to missing Vary: Cookie header",
+          "Description": "Flask is a lightweight WSGI web application framework. When all of the following conditions are met, a response containing data intended for one client may be cached and subsequently sent by the proxy to other clients. If the proxy also caches `Set-Cookie` headers, it may send one client's `session` cookie to other clients. The severity depends on the application's use of the session and the proxy's behavior regarding cookies. The risk depends on all these conditions being met.\n\n1. The application must be hosted behind a caching proxy that does not strip cookies or ignore responses with cookies.\n2. The application sets `session.permanent = True`\n3. The application does not access or modify the session at any point during a request.\n4. `SESSION_REFRESH_EACH_REQUEST` enabled (the default).\n5. The application does not set a `Cache-Control` header to indicate that a page is private or should not be cached.\n\nThis happens because vulnerable versions of Flask only set the `Vary: Cookie` header when the session is accessed or modified, not when it is refreshed (re-sent to update the expiration) without being accessed or modified. This issue has been fixed in versions 2.3.2 and 2.2.5.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-539"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-30861",
+            "https://github.com/pallets/flask",
+            "https://github.com/pallets/flask/commit/70f906c51ce49c485f1d355703e9cc3386b1cc2b",
+            "https://github.com/pallets/flask/commit/8646edca6f47e2cd57464081b3911218d4734f8d (2.2.5)",
+            "https://github.com/pallets/flask/commit/8705dd39c4fa563ea0fe0bf84c85da8fcc98b88d (2.3.2)",
+            "https://github.com/pallets/flask/commit/afd63b16170b7c047f5758eb910c416511e9c965",
+            "https://github.com/pallets/flask/releases/tag/2.2.5",
+            "https://github.com/pallets/flask/releases/tag/2.3.2",
+            "https://github.com/pallets/flask/security/advisories/GHSA-m2qf-hxjv-5gpq",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/flask/PYSEC-2023-62.yaml",
+            "https://linux.oracle.com/cve/CVE-2023-30861.html",
+            "https://linux.oracle.com/errata/ELSA-2023-12710.html",
+            "https://lists.debian.org/debian-lts-announce/2023/08/msg00024.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-30861",
+            "https://security.netapp.com/advisory/ntap-20230818-0006",
+            "https://security.netapp.com/advisory/ntap-20230818-0006/",
+            "https://ubuntu.com/security/notices/USN-6111-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-30861",
+            "https://www.debian.org/security/2023/dsa-5442"
+          ],
+          "PublishedDate": "2023-05-02T18:15:52.373Z",
+          "LastModifiedDate": "2024-11-21T08:00:59.623Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-25289",
+          "VendorIDs": [
+            "GHSA-57h3-9rgr-c24m"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.1.1",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-25289",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:b6a59c9fe0820d17f058e7a60438e18c0073f04ed08563a2b97caa0240f5c020",
+          "Title": "python-pillow: insufficent fix for CVE-2020-35654 due to incorrect error checking in TiffDecode.c",
+          "Description": "An issue was discovered in Pillow before 8.1.1. TiffDecode has a heap-based buffer overflow when decoding crafted YCbCr files because of certain interpretation conflicts with LibTIFF in RGBA mode. NOTE: this issue exists because of an incomplete fix for CVE-2020-35654.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "bitnami": 4,
+            "ghsa": 4,
+            "nvd": 4,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 9.8,
+              "V40Score": 9.3
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-25289",
+            "https://github.com/advisories/GHSA-57h3-9rgr-c24m",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-35.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/3fee28eb9479bf7d59e0fa08068f9cc4a6e2f04c",
+            "https://github.com/python-pillow/Pillow/commit/cbfdde7b1f2295059a20a539ee9960f0bec7b299",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-25289",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.1.1.html",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4763-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-25289"
+          ],
+          "PublishedDate": "2021-03-19T04:15:13.28Z",
+          "LastModifiedDate": "2024-11-21T05:54:41.297Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-34552",
+          "VendorIDs": [
+            "GHSA-7534-mm45-c74v"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.3.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-34552",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:99625f4464402f0e1b9951b109e45c28bf352527255488048fd8be804d2e1a2b",
+          "Title": "python-pillow: Buffer overflow in image convert function",
+          "Description": "Pillow through 8.2.0 and PIL (aka Python Imaging Library) through 1.1.7 allow an attacker to pass controlled parameters directly into a convert function to trigger a buffer overflow in Convert.c.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-120"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "bitnami": 4,
+            "ghsa": 4,
+            "nvd": 4,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 9.8,
+              "V40Score": 9.3
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-34552.json",
+            "https://access.redhat.com/security/cve/CVE-2021-34552",
+            "https://github.com/advisories/GHSA-7534-mm45-c74v",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-331.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/31c473898c29d1b7cb6555ce67d9503a4906b83f",
+            "https://github.com/python-pillow/Pillow/pull/5567",
+            "https://lists.debian.org/debian-lts-announce/2021/07/msg00018.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/7V6LCG525ARIX6LX5QRYNAWVDD2MD2SV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VUGBBT63VL7G4JNOEIPDJIOC34ZFBKNJ/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7V6LCG525ARIX6LX5QRYNAWVDD2MD2SV",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VUGBBT63VL7G4JNOEIPDJIOC34ZFBKNJ",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-34552",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.3.0.html#buffer-overflow",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/index.html",
+            "https://security.gentoo.org/glsa/202211-10",
+            "https://ubuntu.com/security/notices/USN-5227-1",
+            "https://ubuntu.com/security/notices/USN-5227-2",
+            "https://www.cve.org/CVERecord?id=CVE-2021-34552"
+          ],
+          "PublishedDate": "2021-07-13T17:15:09.4Z",
+          "LastModifiedDate": "2024-11-21T06:10:39.64Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-22817",
+          "VendorIDs": [
+            "GHSA-8vj2-vxx3-667w"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "9.0.1",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-22817",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:63220e856ca80b9bebb6bb2e1b7fe515af86bd8d09c6e9208abe99b8b710d49f",
+          "Title": "python-pillow: PIL.ImageMath.eval allows evaluation of arbitrary expressions",
+          "Description": "PIL.ImageMath.eval in Pillow before 9.0.0 allows evaluation of arbitrary expressions, such as ones that use the Python exec method. A lambda expression could also be used.",
+          "Severity": "CRITICAL",
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "bitnami": 4,
+            "ghsa": 4,
+            "nvd": 4,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 9.8,
+              "V40Score": 9.3
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-22817",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2042522",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2042527",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22815",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22816",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22817",
+            "https://errata.almalinux.org/8/ALSA-2022-0643.html",
+            "https://errata.rockylinux.org/RLSA-2022:0643",
+            "https://github.com/advisories/GHSA-8vj2-vxx3-667w",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2022-10.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/8531b01d6cdf0b70f256f93092caa2a5d91afc11",
+            "https://linux.oracle.com/cve/CVE-2022-22817.html",
+            "https://linux.oracle.com/errata/ELSA-2022-0643.html",
+            "https://lists.debian.org/debian-lts-announce/2022/01/msg00018.html",
+            "https://lists.debian.org/debian-lts-announce/2024/03/msg00021.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-22817",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/9.0.0.html#fixed-imagepath-path-array-handling",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/9.0.0.html#restrict-builtins-available-to-imagemath-eval",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/9.0.1.html#security",
+            "https://security.gentoo.org/glsa/202211-10",
+            "https://ubuntu.com/security/notices/USN-5227-1",
+            "https://ubuntu.com/security/notices/USN-5227-2",
+            "https://ubuntu.com/security/notices/USN-5227-3",
+            "https://www.cve.org/CVERecord?id=CVE-2022-22817",
+            "https://www.debian.org/security/2022/dsa-5053"
+          ],
+          "PublishedDate": "2022-01-10T14:12:55.16Z",
+          "LastModifiedDate": "2024-11-21T06:47:30.477Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-50447",
+          "VendorIDs": [
+            "GHSA-3f63-hfp8-52jq"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "10.2.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-50447",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:aeff940d6e2feacc10beef2b66afe4818f5976286f022d7fe5852c0efbbd61bc",
+          "Title": "pillow: Arbitrary Code Execution via the environment parameter",
+          "Description": "Pillow through 10.1.0 allows PIL.ImageMath.eval Arbitrary Code Execution via the environment parameter, a different vulnerability than CVE-2022-22817 (which was about the expression parameter).",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-94",
+            "CWE-95"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 4,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.1
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 8.1,
+              "V40Score": 9.3
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2024/01/20/1",
+            "https://access.redhat.com/errata/RHSA-2024:0893",
+            "https://access.redhat.com/security/cve/CVE-2023-50447",
+            "https://bugzilla.redhat.com/2259479",
+            "https://devhub.checkmarx.com/cve-details/CVE-2023-50447",
+            "https://devhub.checkmarx.com/cve-details/CVE-2023-50447/",
+            "https://duartecsantos.github.io/2023-01-02-CVE-2023-50447",
+            "https://duartecsantos.github.io/2023-01-02-CVE-2023-50447/",
+            "https://duartecsantos.github.io/2024-01-02-CVE-2023-50447",
+            "https://duartecsantos.github.io/2024-01-02-CVE-2023-50447/",
+            "https://errata.almalinux.org/8/ALSA-2024-0893.html",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/45c726fd4daa63236a8f3653530f297dc87b160a",
+            "https://github.com/python-pillow/Pillow/releases",
+            "https://linux.oracle.com/cve/CVE-2023-50447.html",
+            "https://linux.oracle.com/errata/ELSA-2024-0893.html",
+            "https://lists.debian.org/debian-lts-announce/2024/01/msg00019.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-50447",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/10.2.0.html#imagemath-eval-restricted-environment-keys",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/10.2.0.html#security",
+            "https://ubuntu.com/security/notices/USN-6618-1",
+            "https://ubuntu.com/security/notices/USN-8135-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-50447"
+          ],
+          "PublishedDate": "2024-01-19T20:15:11.87Z",
+          "LastModifiedDate": "2024-11-21T08:37:00.967Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-23437",
+          "VendorIDs": [
+            "GHSA-98vv-pw6r-q6q4"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.3.2",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-23437",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:6b7caa8a6cde0b8d5fa98453ff599f47ebad9d301f210b4bcbe7fc97b804dfef",
+          "Title": "python-pillow: possible ReDoS via the getrgb function",
+          "Description": "The package pillow 5.2.0 and before 8.3.2 are vulnerable to Regular Expression Denial of Service (ReDoS) via the getrgb function.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-23437",
+            "https://github.com/advisories/GHSA-98vv-pw6r-q6q4",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-317.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/9e08eb8f78fdfd2f476e1b20b7cf38683754866b",
+            "https://lists.debian.org/debian-lts-announce/2024/03/msg00021.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/RNSG6VFXTAROGF7ACYLMAZNQV4EJ6I2C",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/RNSG6VFXTAROGF7ACYLMAZNQV4EJ6I2C/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VKRCL7KKAKOXCVD7M6WC5OKFGL4L3SJT",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VKRCL7KKAKOXCVD7M6WC5OKFGL4L3SJT/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RNSG6VFXTAROGF7ACYLMAZNQV4EJ6I2C",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VKRCL7KKAKOXCVD7M6WC5OKFGL4L3SJT",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-23437",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.3.2.html",
+            "https://security.gentoo.org/glsa/202211-10",
+            "https://snyk.io/vuln/SNYK-PYTHON-PILLOW-1319443",
+            "https://ubuntu.com/security/notices/USN-5227-1",
+            "https://ubuntu.com/security/notices/USN-5227-2",
+            "https://www.cve.org/CVERecord?id=CVE-2021-23437"
+          ],
+          "PublishedDate": "2021-09-03T16:15:08.317Z",
+          "LastModifiedDate": "2024-11-21T05:51:45.487Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-25287",
+          "VendorIDs": [
+            "GHSA-77gc-v2xv-rvvh"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.2.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-25287",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:b52eea1ee3a8ebc869de1ef59f02a23d6fa6858157c97b344512e62eaa53ed18",
+          "Title": "python-pillow: Out-of-bounds read in J2K image reader",
+          "Description": "An issue was discovered in Pillow before 8.2.0. There is an out-of-bounds read in J2kDecode, in j2ku_graya_la.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "bitnami": 4,
+            "ghsa": 3,
+            "nvd": 4,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 9.1
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 9.1,
+              "V40Score": 8.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V2Score": 6.4,
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 9.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-25287",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915420",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915432",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934699",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934705",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935384",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935396",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935401",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958226",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958231",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958240",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958252",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958257",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958263",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1982378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35653",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35655",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25287",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25288",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25290",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25292",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25293",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27921",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27923",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28675",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28676",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28677",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28678",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34552",
+            "https://errata.rockylinux.org/RLSA-2021:4149",
+            "https://github.com/advisories/GHSA-77gc-v2xv-rvvh",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-137.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/3bf5eddb89afdf690eceaa52bc4d3546ba9a5f87",
+            "https://github.com/python-pillow/Pillow/pull/5377#issuecomment-833821470",
+            "https://github.com/python-pillow/Pillow/pull/5377/commits/3bf5eddb89afdf690eceaa52bc4d3546ba9a5f87",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-25287",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.2.0.html#cve-2021-25287-cve-2021-25288-fix-oob-read-in-jpeg2kdecode",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4963-1",
+            "https://ubuntu.com/security/notices/USN-8135-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-25287"
+          ],
+          "PublishedDate": "2021-06-02T16:15:08.603Z",
+          "LastModifiedDate": "2024-11-21T05:54:40.95Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-25288",
+          "VendorIDs": [
+            "GHSA-rwv7-3v45-hg29"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.2.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-25288",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:f84cd0a516f28839ed49aa3e8f5cfd87951b9667f0c951ef80ffc456f84c0f41",
+          "Title": "python-pillow: Out-of-bounds read in J2K image reader",
+          "Description": "An issue was discovered in Pillow before 8.2.0. There is an out-of-bounds read in J2kDecode, in j2ku_gray_i.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "bitnami": 4,
+            "ghsa": 3,
+            "nvd": 4,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 9.1
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 9.1,
+              "V40Score": 8.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V2Score": 6.4,
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 9.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-25288",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915420",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915432",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934699",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934705",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935384",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935396",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935401",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958226",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958231",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958240",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958252",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958257",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958263",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1982378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35653",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35655",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25287",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25288",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25290",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25292",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25293",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27921",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27923",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28675",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28676",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28677",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28678",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34552",
+            "https://errata.rockylinux.org/RLSA-2021:4149",
+            "https://github.com/advisories/GHSA-rwv7-3v45-hg29",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-138.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/3bf5eddb89afdf690eceaa52bc4d3546ba9a5f87",
+            "https://github.com/python-pillow/Pillow/pull/5377#issuecomment-833821470",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-25288",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.2.0.html#cve-2021-25287-cve-2021-25288-fix-oob-read-in-jpeg2kdecode",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4963-1",
+            "https://ubuntu.com/security/notices/USN-8135-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-25288"
+          ],
+          "PublishedDate": "2021-06-02T16:15:08.65Z",
+          "LastModifiedDate": "2024-11-21T05:54:41.127Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-25290",
+          "VendorIDs": [
+            "GHSA-8xjq-8fcg-g5hw"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.1.1",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-25290",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:4b4fa90d0edd6a60b034120731c28198773b0e97ec5eee81e52201d080e8b5e8",
+          "Title": "python-pillow: Negative-offset memcpy in TIFF image reader",
+          "Description": "An issue was discovered in Pillow before 8.1.1. In TiffDecode.c, there is a negative-offset memcpy with an invalid size.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-25290",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915420",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915432",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934699",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934705",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935384",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935396",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935401",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958226",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958231",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958240",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958252",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958257",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958263",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1982378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35653",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35655",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25287",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25288",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25290",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25292",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25293",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27921",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27923",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28675",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28676",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28677",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28678",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34552",
+            "https://errata.rockylinux.org/RLSA-2021:4149",
+            "https://github.com/advisories/GHSA-8xjq-8fcg-g5hw",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-36.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/86f02f7c70862a0954bfe8133736d352db978eaa",
+            "https://github.com/python-pillow/Pillow/commit/e25be1e33dc526bfd1094bc778a54d8e29bf66c9",
+            "https://lists.debian.org/debian-lts-announce/2021/07/msg00018.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-25290",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.1.1.html",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4763-1",
+            "https://ubuntu.com/security/notices/USN-8135-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-25290"
+          ],
+          "PublishedDate": "2021-03-19T04:15:13.357Z",
+          "LastModifiedDate": "2024-11-21T05:54:41.427Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-25291",
+          "VendorIDs": [
+            "GHSA-mvg9-xffr-p774"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.2.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-25291",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:8cf3896a7ed9751ce7db7449e1ddb1fd7a7aedf809ea799f87a1b4c653f52cac",
+          "Title": "python-pillow: out-of-bounds read in TiffReadRGBATile in TiffDecode.c",
+          "Description": "An issue was discovered in Pillow before 8.1.1. In TiffDecode.c, there is an out-of-bounds read in TiffreadRGBATile via invalid tile boundaries.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-25291",
+            "https://github.com/advisories/GHSA-mvg9-xffr-p774",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-37.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/8b8076bdcb3815be0ef0d279651d8d1342b8ea61",
+            "https://github.com/python-pillow/Pillow/commit/cbdce6c5d054fccaf4af34b47f212355c64ace7a",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-25291",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.1.1.html",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4763-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-25291"
+          ],
+          "PublishedDate": "2021-03-19T04:15:13.53Z",
+          "LastModifiedDate": "2024-11-21T05:54:41.57Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-25293",
+          "VendorIDs": [
+            "GHSA-p43w-g3c5-g5mq"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.1.1",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-25293",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:d66159cfb835dafa3c28d2d185792ca546ba964ac0c344819add485976aef415",
+          "Title": "python-pillow: Out-of-bounds read in SGI RLE image reader",
+          "Description": "An issue was discovered in Pillow before 8.1.1. There is an out-of-bounds read in SGIRleDecode.c.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-25293",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915420",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915432",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934699",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934705",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935384",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935396",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935401",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958226",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958231",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958240",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958252",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958257",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958263",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1982378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35653",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35655",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25287",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25288",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25290",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25292",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25293",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27921",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27923",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28675",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28676",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28677",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28678",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34552",
+            "https://errata.rockylinux.org/RLSA-2021:4149",
+            "https://github.com/advisories/GHSA-p43w-g3c5-g5mq",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-39.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/4853e522bddbec66022c0915b9a56255d0188bf9",
+            "https://github.com/python-pillow/Pillow/commit/f891baa604636cd2506a9360d170bc2cf4963cc5",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-25293",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.1.1.html",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4763-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-25293"
+          ],
+          "PublishedDate": "2021-03-19T04:15:13.67Z",
+          "LastModifiedDate": "2024-11-21T05:54:41.85Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-27921",
+          "VendorIDs": [
+            "GHSA-f4w8-cv6p-x6r5"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.1.2",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-27921",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:27496c47c51fbf2f85f1a6524c38e82c415e2d54dff6c056fb9482156b3d262e",
+          "Title": "python-pillow: Excessive memory allocation in BLP image reader",
+          "Description": "Pillow before 8.1.2 allows attackers to cause a denial of service (memory consumption) because the reported size of a contained image is not properly checked for a BLP container, and thus an attempted memory allocation can be very large.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-20"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-27921",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915420",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915432",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934699",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934705",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935384",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935396",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935401",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958226",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958231",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958240",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958252",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958257",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958263",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1982378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35653",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35655",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25287",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25288",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25290",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25292",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25293",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27921",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27923",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28675",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28676",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28677",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28678",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34552",
+            "https://errata.rockylinux.org/RLSA-2021:4149",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-40.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/756fff33128a0b643d10518a26ad04b726dd8973",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-27921",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.1.1.html",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.1.2.html",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4763-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-27921"
+          ],
+          "PublishedDate": "2021-03-03T09:15:14.17Z",
+          "LastModifiedDate": "2025-08-15T05:15:28.557Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-27922",
+          "VendorIDs": [
+            "GHSA-3wvg-mj6g-m9cv"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.1.2",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-27922",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:e15df84e7943b5dcf1340b97f48725b34664f2e2f2bea9dc8244c1def62d5da2",
+          "Title": "python-pillow: Excessive memory allocation in ICNS image reader",
+          "Description": "Pillow before 8.1.2 allows attackers to cause a denial of service (memory consumption) because the reported size of a contained image is not properly checked for an ICNS container, and thus an attempted memory allocation can be very large.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-20"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-27922",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915420",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915432",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934699",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934705",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935384",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935396",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935401",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958226",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958231",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958240",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958252",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958257",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958263",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1982378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35653",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35655",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25287",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25288",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25290",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25292",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25293",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27921",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27923",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28675",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28676",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28677",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28678",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34552",
+            "https://errata.rockylinux.org/RLSA-2021:4149",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-41.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/756fff33128a0b643d10518a26ad04b726dd8973",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-27922",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.1.1.html",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.1.2.html",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4763-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-27922"
+          ],
+          "PublishedDate": "2021-03-03T09:15:14.233Z",
+          "LastModifiedDate": "2025-08-15T05:15:29.71Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-27923",
+          "VendorIDs": [
+            "GHSA-95q3-8gr9-gm8w"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.1.2",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-27923",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:cd663f87352991fc5fd8a42674218b44eb6a351ab5bf3f38f5b37fb540241bd8",
+          "Title": "python-pillow: Excessive memory allocation in ICO image reader",
+          "Description": "Pillow before 8.1.2 allows attackers to cause a denial of service (memory consumption) because the reported size of a contained image is not properly checked for an ICO container, and thus an attempted memory allocation can be very large.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-20"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-27923",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915420",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915432",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934699",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934705",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935384",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935396",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935401",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958226",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958231",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958240",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958252",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958257",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958263",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1982378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35653",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35655",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25287",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25288",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25290",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25292",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25293",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27921",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27923",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28675",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28676",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28677",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28678",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34552",
+            "https://errata.rockylinux.org/RLSA-2021:4149",
+            "https://github.com/advisories/GHSA-95q3-8gr9-gm8w",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-42.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/756fff33128a0b643d10518a26ad04b726dd8973",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/S7G44Z33J4BNI2DPDROHWGVG2U7ZH5JU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TQQY6472RX4J2SUJENWDZAWKTJJGP2ML/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZTSY25UJU7NJUFHH3HWT575LT4TDFWBZ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-27923",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.1.1.html",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.1.2.html",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4763-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-27923"
+          ],
+          "PublishedDate": "2021-03-03T09:15:14.327Z",
+          "LastModifiedDate": "2025-08-15T05:15:29.843Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-28675",
+          "VendorIDs": [
+            "GHSA-g6rj-rv7j-xwp4"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.2.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-28675",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:6780065926d8c344dfe74b1e37187fde3315fa7aca084184688ef406ca6edd99",
+          "Title": "python-pillow: Excessive memory allocation in PSD image reader",
+          "Description": "An issue was discovered in Pillow before 8.2.0. PSDImagePlugin.PsdImageFile lacked a sanity check on the number of input layers relative to the size of the data block. This could lead to a DoS on Image.open prior to Image.load.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-252"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "bitnami": 2,
+            "ghsa": 3,
+            "nvd": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 5.5,
+              "V40Score": 7.1
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-28675",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915420",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915432",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934699",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934705",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935384",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935396",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935401",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958226",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958231",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958240",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958252",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958257",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958263",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1982378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35653",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35655",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25287",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25288",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25290",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25292",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25293",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27921",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27923",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28675",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28676",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28677",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28678",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34552",
+            "https://errata.rockylinux.org/RLSA-2021:4149",
+            "https://github.com/advisories/GHSA-g6rj-rv7j-xwp4",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-139.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/pull/5377/commits/22e9bee4ef225c0edbb9323f94c26cee0c623497",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-28675",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.2.0.html#cve-2021-28675-fix-dos-in-psdimageplugin",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4963-1",
+            "https://ubuntu.com/security/notices/USN-8135-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-28675"
+          ],
+          "PublishedDate": "2021-06-02T15:15:07.823Z",
+          "LastModifiedDate": "2024-11-21T06:00:05.4Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-28676",
+          "VendorIDs": [
+            "GHSA-7r7m-5h27-29hp"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.2.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-28676",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:d470193947e0331cd2122863d881f1a858a502d312665bbcb57384b62c0d26f7",
+          "Title": "python-pillow: Infinite loop in FLI image reader",
+          "Description": "An issue was discovered in Pillow before 8.2.0. For FLI data, FliDecode did not properly check that the block advance was non-zero, potentially leading to an infinite loop on load.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-835"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-28676",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915420",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915432",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934699",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934705",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935384",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935396",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935401",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958226",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958231",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958240",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958252",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958257",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958263",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1982378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35653",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35655",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25287",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25288",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25290",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25292",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25293",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27921",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27923",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28675",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28676",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28677",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28678",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34552",
+            "https://errata.rockylinux.org/RLSA-2021:4149",
+            "https://github.com/advisories/GHSA-7r7m-5h27-29hp",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-92.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/bb6c11fb889e6c11b0ee122b828132ee763b5856",
+            "https://github.com/python-pillow/Pillow/pull/5377",
+            "https://lists.debian.org/debian-lts-announce/2021/07/msg00018.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-28676",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.2.0.html#cve-2021-28676-fix-fli-dos",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.2.0.html#security",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4963-1",
+            "https://ubuntu.com/security/notices/USN-8135-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-28676"
+          ],
+          "PublishedDate": "2021-06-02T16:15:08.797Z",
+          "LastModifiedDate": "2024-11-21T06:00:05.62Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-28677",
+          "VendorIDs": [
+            "GHSA-q5hq-fp76-qmrc"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "8.2.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-28677",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:4d9a9bcefcde7f474ea37ba525ce2ee659f5eea6115137adf20c6c76e59a7005",
+          "Title": "python-pillow: Excessive CPU use in EPS image reader",
+          "Description": "An issue was discovered in Pillow before 8.2.0. For EPS data, the readline implementation used in EPSImageFile has to deal with any combination of \\r and \\n as line endings. It used an accidentally quadratic method of accumulating lines while looking for a line ending. A malicious EPS file could use this to perform a DoS of Pillow in the open phase, before an image was accepted for opening.",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-28677",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915420",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1915432",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934699",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1934705",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935384",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935396",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935401",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958226",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958231",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958240",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958252",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958257",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1958263",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1982378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35653",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35655",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25287",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25288",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25290",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25292",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25293",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27921",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27923",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28675",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28676",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28677",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28678",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34552",
+            "https://errata.rockylinux.org/RLSA-2021:4149",
+            "https://github.com/advisories/GHSA-q5hq-fp76-qmrc",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-93.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/5a5e6db0abf4e7a638fb1b3408c4e495a096cb92",
+            "https://github.com/python-pillow/Pillow/pull/5377",
+            "https://lists.debian.org/debian-lts-announce/2021/07/msg00018.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-28677",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/8.2.0.html#cve-2021-28677-fix-eps-dos-on-open",
+            "https://security.gentoo.org/glsa/202107-33",
+            "https://ubuntu.com/security/notices/USN-4963-1",
+            "https://ubuntu.com/security/notices/USN-8135-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-28677"
+          ],
+          "PublishedDate": "2021-06-02T16:15:08.827Z",
+          "LastModifiedDate": "2024-11-21T06:00:06.653Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-24303",
+          "VendorIDs": [
+            "GHSA-9j59-75qj-795w"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "9.0.1",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-24303",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:ac5e1ba3fa1724b2461949378e54710bd07e83609f5fc23aa7778b3886ebc100",
+          "Title": "python-pillow: temporary directory with a space character allows removal of unrelated file after im.show() and related actions",
+          "Description": "Pillow before 9.0.1 allows attackers to delete files because spaces in temporary pathnames are mishandled.",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "bitnami": 4,
+            "ghsa": 3,
+            "nvd": 4,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+              "V3Score": 9.1
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 9.1,
+              "V40Score": 8.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+              "V2Score": 6.4,
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-24303",
+            "https://github.com/advisories/GHSA-9j59-75qj-795w",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2022-168.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/blob/e8ab5640774716c5486d3cb05167f74f742ad6ef/CHANGES.rst?plain=1#L1172",
+            "https://github.com/python-pillow/Pillow/commit/10c4f75aaa383bd9671e923e3b91d391ea12d781",
+            "https://github.com/python-pillow/Pillow/commit/143032103c9f2d55a0a7960bd3e630cb72549e8a",
+            "https://github.com/python-pillow/Pillow/commit/427221ef5f19157001bf8b1ad7cfe0b905ca8c26",
+            "https://github.com/python-pillow/Pillow/pull/3450",
+            "https://github.com/python-pillow/Pillow/pull/6010",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/W4ZUXPKEX72O3E5IHBPVY5ZCPMJ4GHHV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/XR6UP2XONXOVXI4446VY72R63YRO2YTP/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/W4ZUXPKEX72O3E5IHBPVY5ZCPMJ4GHHV",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XR6UP2XONXOVXI4446VY72R63YRO2YTP",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-24303",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/9.0.1.html",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/9.0.1.html#security",
+            "https://security.gentoo.org/glsa/202211-10",
+            "https://ubuntu.com/security/notices/USN-5777-1",
+            "https://ubuntu.com/security/notices/USN-5777-2",
+            "https://www.cve.org/CVERecord?id=CVE-2022-24303"
+          ],
+          "PublishedDate": "2022-03-28T02:15:07.14Z",
+          "LastModifiedDate": "2024-11-21T06:50:07.9Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-45198",
+          "VendorIDs": [
+            "GHSA-m2vv-5vj5-2hm7"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "9.2.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-45198",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:99e8b3f0f47298c3d6dd0b86dec77cce8f60c9c3341d2367707b0528224caa64",
+          "Title": "Pillow before 9.2.0 performs Improper Handling of Highly Compressed GI ...",
+          "Description": "Pillow before 9.2.0 performs Improper Handling of Highly Compressed GIF Data (Data Amplification).",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://bugs.gentoo.org/855683",
+            "https://cwe.mitre.org/data/definitions/409.html",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2022-42979.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/11918eac0628ec8ac0812670d9838361ead2d6a4",
+            "https://github.com/python-pillow/Pillow/pull/6402",
+            "https://github.com/python-pillow/Pillow/pull/6402/commits/c9f1b35e981075110a23487a8d4a6cbb59a588ea",
+            "https://github.com/python-pillow/Pillow/releases/tag/9.2.0",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-45198",
+            "https://security.gentoo.org/glsa/202211-10",
+            "https://ubuntu.com/security/notices/USN-5777-1",
+            "https://ubuntu.com/security/notices/USN-5777-2",
+            "https://www.cve.org/CVERecord?id=CVE-2022-45198"
+          ],
+          "PublishedDate": "2022-11-14T07:15:10.347Z",
+          "LastModifiedDate": "2024-11-21T07:28:56.987Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-44271",
+          "VendorIDs": [
+            "GHSA-8ghj-p4vj-mr35"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "10.0.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-44271",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:29c075149d310aaa8d41b00e7d29c9048720c84096f710d536b5bde7a91a1aa3",
+          "Title": "python-pillow: uncontrolled resource consumption when textlength in an ImageDraw instance operates on a long text argument",
+          "Description": "An issue was discovered in Pillow before 10.0.0. It is a Denial of Service that uncontrollably allocates memory to process a given task, potentially causing a service to crash by having it run out of memory. This occurs for truetype in ImageFont when textlength in an ImageDraw instance operates on a long text argument.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2024:3005",
+            "https://access.redhat.com/security/cve/CVE-2023-44271",
+            "https://bugzilla.redhat.com/2247820",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2247820",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-44271",
+            "https://devhub.checkmarx.com/cve-details/CVE-2023-44271",
+            "https://devhub.checkmarx.com/cve-details/CVE-2023-44271/",
+            "https://errata.almalinux.org/8/ALSA-2024-3005.html",
+            "https://errata.rockylinux.org/RLSA-2024:3005",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2023-227.yaml",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/1fe1bb49c452b0318cad12ea9d97c3bef188e9a7",
+            "https://github.com/python-pillow/Pillow/pull/7244",
+            "https://linux.oracle.com/cve/CVE-2023-44271.html",
+            "https://linux.oracle.com/errata/ELSA-2024-3005.html",
+            "https://lists.debian.org/debian-lts-announce/2024/03/msg00021.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/N2JOEDUJDQLCUII2LQYZYSM7RJL2I3P4",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/N2JOEDUJDQLCUII2LQYZYSM7RJL2I3P4/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-44271",
+            "https://ubuntu.com/security/notices/USN-6618-1",
+            "https://ubuntu.com/security/notices/USN-8135-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-44271"
+          ],
+          "PublishedDate": "2023-11-03T05:15:30.137Z",
+          "LastModifiedDate": "2024-11-21T08:25:33.61Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-4863",
+          "VendorIDs": [
+            "GHSA-j7hp-h8jx-5ppr"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "10.0.1",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-4863",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:d52cf9bb76dcf400a0d23c06c718f30fe0277b2661b9d29091e3be60846934aa",
+          "Title": "libwebp: Heap buffer overflow in WebP Codec",
+          "Description": "Heap buffer overflow in libwebp in Google Chrome prior to 116.0.5845.187 and libwebp 1.3.2 allowed a remote attacker to perform an out of bounds memory write via a crafted HTML page. (Chromium security severity: Critical)",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 8.8
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 8.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+              "V3Score": 9.6
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2023/09/21/4",
+            "http://www.openwall.com/lists/oss-security/2023/09/22/1",
+            "http://www.openwall.com/lists/oss-security/2023/09/22/3",
+            "http://www.openwall.com/lists/oss-security/2023/09/22/4",
+            "http://www.openwall.com/lists/oss-security/2023/09/22/5",
+            "http://www.openwall.com/lists/oss-security/2023/09/22/6",
+            "http://www.openwall.com/lists/oss-security/2023/09/22/7",
+            "http://www.openwall.com/lists/oss-security/2023/09/22/8",
+            "http://www.openwall.com/lists/oss-security/2023/09/26/1",
+            "http://www.openwall.com/lists/oss-security/2023/09/26/7",
+            "http://www.openwall.com/lists/oss-security/2023/09/28/1",
+            "http://www.openwall.com/lists/oss-security/2023/09/28/2",
+            "http://www.openwall.com/lists/oss-security/2023/09/28/4",
+            "https://access.redhat.com/errata/RHSA-2023:5309",
+            "https://access.redhat.com/security/cve/CVE-2023-4863",
+            "https://adamcaudill.com/2023/09/14/whose-cve-is-it-anyway",
+            "https://adamcaudill.com/2023/09/14/whose-cve-is-it-anyway/",
+            "https://blog.isosceles.com/the-webp-0day",
+            "https://blog.isosceles.com/the-webp-0day/",
+            "https://bugzilla.redhat.com/2238431",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2238431",
+            "https://bugzilla.suse.com/show_bug.cgi?id=1215231",
+            "https://chromereleases.googleblog.com/2023/09/stable-channel-update-for-desktop_11.html",
+            "https://chromereleases.googleblog.com/2023/09/stable-channel-update-for-desktop_12.html",
+            "https://chromium.googlesource.com/webm/libwebp.git/+/902bc9190331343b2017211debcec8d2ab87e17a",
+            "https://crbug.com/1479274",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-4863",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5129",
+            "https://en.bandisoft.com/honeyview/history",
+            "https://en.bandisoft.com/honeyview/history/",
+            "https://errata.almalinux.org/8/ALSA-2023-5309.html",
+            "https://errata.rockylinux.org/RLSA-2023:5214",
+            "https://github.com/ImageMagick/ImageMagick/discussions/6664",
+            "https://github.com/dlemstra/Magick.NET/releases/tag/13.3.0",
+            "https://github.com/electron/electron/pull/39823",
+            "https://github.com/electron/electron/pull/39825",
+            "https://github.com/electron/electron/pull/39826",
+            "https://github.com/electron/electron/pull/39827",
+            "https://github.com/electron/electron/pull/39828",
+            "https://github.com/jaredforth/webp/commit/9d4c56e63abecc777df71c702503c3eaabd7dcbc",
+            "https://github.com/jaredforth/webp/pull/30",
+            "https://github.com/python-pillow/Pillow/pull/7395",
+            "https://github.com/qnighy/libwebp-sys2-rs/commit/4560c473a76ec8bd8c650f19ddf9d7a44f719f8b",
+            "https://github.com/qnighy/libwebp-sys2-rs/pull/21",
+            "https://github.com/webmproject/libwebp",
+            "https://github.com/webmproject/libwebp/commit/902bc9190331343b2017211debcec8d2ab87e17a",
+            "https://github.com/webmproject/libwebp/releases/tag/v1.3.2",
+            "https://linux.oracle.com/cve/CVE-2023-4863.html",
+            "https://linux.oracle.com/errata/ELSA-2023-5309.html",
+            "https://lists.debian.org/debian-lts-announce/2023/09/msg00015.html",
+            "https://lists.debian.org/debian-lts-announce/2023/09/msg00016.html",
+            "https://lists.debian.org/debian-lts-announce/2023/09/msg00017.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T655QF7CQ3DYAMPFV7IECQYGDEUIVVT",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T655QF7CQ3DYAMPFV7IECQYGDEUIVVT/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FYYKLG6CRGEDTNRBSU26EEWAO6D6U645",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FYYKLG6CRGEDTNRBSU26EEWAO6D6U645/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KUQ7CTX3W372X3UY56VVNAHCH6H2F4X3",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KUQ7CTX3W372X3UY56VVNAHCH6H2F4X3/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OZDGWWMJREPAGKWCJKSCM4WYLANSKIFX",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OZDGWWMJREPAGKWCJKSCM4WYLANSKIFX/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PYZV7TMKF4QHZ54SFJX54BDN52VHGGCX",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PYZV7TMKF4QHZ54SFJX54BDN52VHGGCX/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WHOLML7N2G5KCAZXFWC5IDFFHSQS5SDB",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WHOLML7N2G5KCAZXFWC5IDFFHSQS5SDB/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WTRUIS3564P7ZLM2S2IH4Y4KZ327LI4I",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WTRUIS3564P7ZLM2S2IH4Y4KZ327LI4I/",
+            "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-4863",
+            "https://news.ycombinator.com/item?id=37478403",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-4863",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/10.0.1.html#security",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0060.html",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0061.html",
+            "https://security-tracker.debian.org/tracker/CVE-2023-4863",
+            "https://security.gentoo.org/glsa/202309-05",
+            "https://security.gentoo.org/glsa/202401-10",
+            "https://security.netapp.com/advisory/ntap-20230929-0011",
+            "https://security.netapp.com/advisory/ntap-20230929-0011/",
+            "https://sethmlarson.dev/security-developer-in-residence-weekly-report-16",
+            "https://stackdiary.com/critical-vulnerability-in-webp-codec-cve-2023-4863",
+            "https://stackdiary.com/critical-vulnerability-in-webp-codec-cve-2023-4863/",
+            "https://ubuntu.com/security/notices/USN-6367-1",
+            "https://ubuntu.com/security/notices/USN-6368-1",
+            "https://ubuntu.com/security/notices/USN-6369-1",
+            "https://ubuntu.com/security/notices/USN-6369-2",
+            "https://www.bentley.com/advisories/be-2023-0001",
+            "https://www.bentley.com/advisories/be-2023-0001/",
+            "https://www.bleepingcomputer.com/news/google/google-fixes-another-chrome-zero-day-bug-exploited-in-attacks",
+            "https://www.bleepingcomputer.com/news/google/google-fixes-another-chrome-zero-day-bug-exploited-in-attacks/",
+            "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+            "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2023-4863",
+            "https://www.cve.org/CVERecord?id=CVE-2023-4863",
+            "https://www.debian.org/security/2023/dsa-5496",
+            "https://www.debian.org/security/2023/dsa-5497",
+            "https://www.debian.org/security/2023/dsa-5498",
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2023-40",
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2023-40/",
+            "https://www.vicarius.io/vsociety/posts/zero-day-webp-vulnerability-cve-2023-4863"
+          ],
+          "PublishedDate": "2023-09-12T15:15:24.327Z",
+          "LastModifiedDate": "2025-10-24T14:07:28.793Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-28219",
+          "VendorIDs": [
+            "GHSA-44wm-f244-xhp3"
+          ],
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@8.1.0",
+            "UID": "a148cd673f0c2dce"
+          },
+          "InstalledVersion": "8.1.0",
+          "FixedVersion": "10.3.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-28219",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:808a2441332bac812a7d6dc90567f0f93cd5cab90ced5e0dfaad18ffd02db21a",
+          "Title": "python-pillow: buffer overflow in _imagingcms.c",
+          "Description": "In _imagingcms.c in Pillow before 10.3.0, a buffer overflow exists because strcpy is used instead of strncpy.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-680"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "bitnami": 2,
+            "ghsa": 3,
+            "nvd": 2,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 6.7,
+              "V40Score": 7.3
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2024:4227",
+            "https://access.redhat.com/security/cve/CVE-2024-28219",
+            "https://bugzilla.redhat.com/2272563",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2272563",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-28219",
+            "https://errata.almalinux.org/8/ALSA-2024-4227.html",
+            "https://errata.rockylinux.org/RLSA-2024:4227",
+            "https://github.com/advisories/GHSA-44wm-f244-xhp3",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/2a93aba5cfcf6e241ab4f9392c13e3b74032c061",
+            "https://linux.oracle.com/cve/CVE-2024-28219.html",
+            "https://linux.oracle.com/errata/ELSA-2024-4227.html",
+            "https://lists.debian.org/debian-lts-announce/2024/04/msg00008.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/4XLPUT3VK4GQ6EVY525TT2QNUIXNRU5M",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/4XLPUT3VK4GQ6EVY525TT2QNUIXNRU5M/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4XLPUT3VK4GQ6EVY525TT2QNUIXNRU5M/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-28219",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/10.3.0.html#security",
+            "https://ubuntu.com/security/notices/USN-6744-1",
+            "https://ubuntu.com/security/notices/USN-6744-2",
+            "https://ubuntu.com/security/notices/USN-6744-3",
+            "https://www.cve.org/CVERecord?id=CVE-2024-28219"
+          ],
+          "PublishedDate": "2024-04-03T03:15:09.71Z",
+          "LastModifiedDate": "2025-11-04T19:17:05.253Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2020-14343",
+          "VendorIDs": [
+            "GHSA-8q59-q68h-6hv4"
+          ],
+          "PkgName": "PyYAML",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pyyaml@5.3.1",
+            "UID": "ba0664b30349ab78"
+          },
+          "InstalledVersion": "5.3.1",
+          "FixedVersion": "5.4",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-14343",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:755471f94d457ae636b282ae01c6c890ee79575fc0087c6770186d51c56ef96d",
+          "Title": "PyYAML: incomplete fix for CVE-2020-1747",
+          "Description": "A vulnerability was discovered in the PyYAML library in versions before 5.4, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. This flaw allows an attacker to execute arbitrary code on the system by abusing the python/object/new constructor. This flaw is due to an incomplete fix for CVE-2020-1747.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-20"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "cbl-mariner": 4,
+            "ghsa": 4,
+            "nvd": 4,
+            "oracle-oval": 2,
+            "photon": 4,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 9.8,
+              "V40Score": 9.3
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 10,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2020-14343",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1860466",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14343",
+            "https://errata.almalinux.org/8/ALSA-2021-2583.html",
+            "https://errata.rockylinux.org/RLSA-2021:2583",
+            "https://github.com/SeldonIO/seldon-core/issues/2252",
+            "https://github.com/advisories/GHSA-8q59-q68h-6hv4",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pyyaml/PYSEC-2021-142.yaml",
+            "https://github.com/yaml/pyyaml",
+            "https://github.com/yaml/pyyaml/commit/a001f2782501ad2d24986959f0239a354675f9dc",
+            "https://github.com/yaml/pyyaml/issues/420",
+            "https://github.com/yaml/pyyaml/issues/420#issuecomment-663673966",
+            "https://github.com/yaml/pyyaml/wiki/PyYAML-yaml.load(input)-Deprecation",
+            "https://linux.oracle.com/cve/CVE-2020-14343.html",
+            "https://linux.oracle.com/errata/ELSA-2021-2583.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-14343",
+            "https://pypi.org/project/PyYAML",
+            "https://ubuntu.com/security/notices/USN-4940-1",
+            "https://www.cve.org/CVERecord?id=CVE-2020-14343",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html",
+            "https://www.oracle.com/security-alerts/cpujul2022.html"
+          ],
+          "PublishedDate": "2021-02-09T21:15:12.707Z",
+          "LastModifiedDate": "2024-11-21T05:03:03.217Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-25577",
+          "VendorIDs": [
+            "GHSA-xg9f-g7g7-2323"
+          ],
+          "PkgName": "Werkzeug",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/werkzeug@2.0.1",
+            "UID": "191cd2716e155311"
+          },
+          "InstalledVersion": "2.0.1",
+          "FixedVersion": "2.2.3",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-25577",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:eba06c08d46b66d227f79969f06aa00e18a3944fe39111fcd494b9cf054d0912",
+          "Title": "python-werkzeug: high resource usage when parsing multipart form data with many fields",
+          "Description": "Werkzeug is a comprehensive WSGI web application library. Prior to version 2.2.3, Werkzeug's multipart form data parser will parse an unlimited number of parts, including file parts. Parts can be a small amount of bytes, but each requires CPU time to parse and may use more memory as Python data. If a request can be made to an endpoint that accesses `request.data`, `request.form`, `request.files`, or `request.get_data(parse_form_data=False)`, it can cause unexpectedly high resource usage. This allows an attacker to cause a denial of service by sending crafted multipart data to an endpoint that will parse it. The amount of CPU time required can block worker processes from handling legitimate requests. The amount of RAM required can trigger an out of memory kill of the process. Unlimited file parts can use up memory and file handles. If many concurrent requests are sent continuously, this can exhaust or kill all available workers. Version 2.2.3 contains a patch for this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 1,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-25577",
+            "https://github.com/pallets/werkzeug",
+            "https://github.com/pallets/werkzeug/commit/517cac5a804e8c4dc4ed038bb20dacd038e7a9f1",
+            "https://github.com/pallets/werkzeug/releases/tag/2.2.3",
+            "https://github.com/pallets/werkzeug/security/advisories/GHSA-xg9f-g7g7-2323",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/werkzeug/PYSEC-2023-58.yaml",
+            "https://linux.oracle.com/cve/CVE-2023-25577.html",
+            "https://linux.oracle.com/errata/ELSA-2023-12709.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-25577",
+            "https://security.netapp.com/advisory/ntap-20230818-0003",
+            "https://security.netapp.com/advisory/ntap-20230818-0003/",
+            "https://ubuntu.com/security/notices/USN-5948-1",
+            "https://ubuntu.com/security/notices/USN-5948-2",
+            "https://www.cve.org/CVERecord?id=CVE-2023-25577",
+            "https://www.debian.org/security/2023/dsa-5470"
+          ],
+          "PublishedDate": "2023-02-14T20:15:17.543Z",
+          "LastModifiedDate": "2024-11-21T07:49:45.74Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-34069",
+          "VendorIDs": [
+            "GHSA-2g68-c3qc-8985"
+          ],
+          "PkgName": "Werkzeug",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/werkzeug@2.0.1",
+            "UID": "191cd2716e155311"
+          },
+          "InstalledVersion": "2.0.1",
+          "FixedVersion": "3.0.3",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-34069",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:b3cfdefbfbd175b0257fd7ed6a3279d59356bde05e41f9470df3b49e7a8e6c55",
+          "Title": "python-werkzeug: user may execute code on a developer's machine",
+          "Description": "Werkzeug is a comprehensive WSGI web application library. The debugger in affected versions of Werkzeug can allow an attacker to execute code on a developer's machine under some circumstances. This requires the attacker to get the developer to interact with a domain and subdomain they control, and enter the debugger PIN, but if they are successful it allows access to the debugger even if it is only running on localhost. This also requires the attacker to guess a URL in the developer's application that will trigger the debugger. This vulnerability is fixed in 3.0.3.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-352"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-34069",
+            "https://github.com/pallets/werkzeug",
+            "https://github.com/pallets/werkzeug/commit/3386395b24c7371db11a5b8eaac0c91da5362692",
+            "https://github.com/pallets/werkzeug/security/advisories/GHSA-2g68-c3qc-8985",
+            "https://lists.debian.org/debian-lts-announce/2025/02/msg00026.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H4SH32AM3CTPMAAEOIDAN7VU565LO4IR",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H4SH32AM3CTPMAAEOIDAN7VU565LO4IR/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HFERFN7PINV4MOGMGA3DPIXJPDCYOEJZ",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HFERFN7PINV4MOGMGA3DPIXJPDCYOEJZ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-34069",
+            "https://security.netapp.com/advisory/ntap-20240614-0004",
+            "https://security.netapp.com/advisory/ntap-20240614-0004/",
+            "https://ubuntu.com/security/notices/USN-6799-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-34069"
+          ],
+          "PublishedDate": "2024-05-06T15:15:23.99Z",
+          "LastModifiedDate": "2025-12-03T15:32:11.177Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2020-36242",
+          "VendorIDs": [
+            "GHSA-rhm9-p9w5-fwm7"
+          ],
+          "PkgName": "cryptography",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/cryptography@3.2.1",
+            "UID": "a30aea7d3b08e032"
+          },
+          "InstalledVersion": "3.2.1",
+          "FixedVersion": "3.3.2",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-36242",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:92a88e062249f2002c3f4bbae9628091da43e1cbbe94cc0041b30dabd46c5d38",
+          "Title": "python-cryptography: Large inputs for symmetric encryption can trigger integer overflow leading to buffer overflow",
+          "Description": "In the cryptography package before 3.3.2 for Python, certain sequences of update calls to symmetrically encrypt multi-GB values could result in an integer overflow and buffer overflow, as demonstrated by the Fernet class.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "cbl-mariner": 4,
+            "ghsa": 3,
+            "nvd": 4,
+            "oracle-oval": 2,
+            "photon": 4,
+            "redhat": 2,
+            "rocky": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 9.1,
+              "V40Score": 8.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V2Score": 6.4,
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 8.2
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2020-36242",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1778939",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1873581",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1889988",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1891947",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1907429",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1926226",
+            "https://cryptography.io/en/latest/changelog.html#v3-3-2",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25659",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-36242",
+            "https://errata.rockylinux.org/RLSA-2021:1608",
+            "https://github.com/advisories/GHSA-rhm9-p9w5-fwm7",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/blob/master/CHANGELOG.rst",
+            "https://github.com/pyca/cryptography/commit/82b6ce28389f0a317bc55ba2091a74b346db7cae",
+            "https://github.com/pyca/cryptography/compare/3.3.1...3.3.2",
+            "https://github.com/pyca/cryptography/issues/5615",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-rhm9-p9w5-fwm7",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/cryptography/PYSEC-2021-63.yaml",
+            "https://linux.oracle.com/cve/CVE-2020-36242.html",
+            "https://linux.oracle.com/errata/ELSA-2021-1608.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/L7RGQLK4J5ZQFRLKCHVVG6BKZTUQMG7E",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/L7RGQLK4J5ZQFRLKCHVVG6BKZTUQMG7E/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L7RGQLK4J5ZQFRLKCHVVG6BKZTUQMG7E",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-36242",
+            "https://www.cve.org/CVERecord?id=CVE-2020-36242",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html",
+            "https://www.oracle.com/security-alerts/cpujul2022.html"
+          ],
+          "PublishedDate": "2021-02-07T20:15:12.09Z",
+          "LastModifiedDate": "2024-11-21T05:29:08.287Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0286",
+          "VendorIDs": [
+            "GHSA-x4qr-2fvf-3mr5"
+          ],
+          "PkgName": "cryptography",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/cryptography@3.2.1",
+            "UID": "a30aea7d3b08e032"
+          },
+          "InstalledVersion": "3.2.1",
+          "FixedVersion": "39.0.1",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0286",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:88f18ef54d3a8251ce79e80245d27bbf0ec360e6417dca3d38fb1b5ba8a55afe",
+          "Title": "openssl: X.400 address type confusion in X.509 GeneralName",
+          "Description": "There is a type confusion vulnerability relating to X.400 address processing\ninside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but\nthe public structure definition for GENERAL_NAME incorrectly specified the type\nof the x400Address field as ASN1_TYPE. This field is subsequently interpreted by\nthe OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an\nASN1_STRING.\n\nWhen CRL checking is enabled (i.e. the application sets the\nX509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass\narbitrary pointers to a memcmp call, enabling them to read memory contents or\nenact a denial of service. In most cases, the attack requires the attacker to\nprovide both the certificate chain and CRL, neither of which need to have a\nvalid signature. If the attacker only controls one of these inputs, the other\ninput must already contain an X.400 address as a CRL distribution point, which\nis uncommon. As such, this vulnerability is most likely to only affect\napplications which have implemented their own functionality for retrieving CRLs\nover a network.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-843"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "julia": 3,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 7.4
+            },
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 7.4
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 7.4
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:7895",
+            "https://access.redhat.com/security/cve/CVE-2023-0286",
+            "https://access.redhat.com/security/cve/cve-2023-0286",
+            "https://bugzilla.redhat.com/2164440",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2144000",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2144003",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2144006",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2144008",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2144010",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2144012",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2144015",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2144017",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2144019",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2145170",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2158412",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164440",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164487",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164488",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164492",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164494",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164497",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164499",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164500",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4203",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4304",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4450",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0215",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0216",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0217",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0286",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0401",
+            "https://errata.almalinux.org/8/ALSA-2025-7895.html",
+            "https://errata.rockylinux.org/RLSA-2023:0946",
+            "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.2-relnotes.txt",
+            "https://ftp.openbsd.org/pub/OpenBSD/patches/7.2/common/018_x509.patch.sig",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2c6c9d439b484e1ba9830d8454a34fa4f80fdfe9",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2f7530077e0ef79d98718138716bc51ca0cad658",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=fd2af07dc083a350c959147097003a14a5e8ac4d",
+            "https://github.com/advisories/GHSA-x4qr-2fvf-3mr5",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-x4qr-2fvf-3mr5",
+            "https://linux.oracle.com/cve/CVE-2023-0286.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7937.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0286",
+            "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0003",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0006.html",
+            "https://security.gentoo.org/glsa/202402-08",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://ubuntu.com/security/notices/USN-5845-1",
+            "https://ubuntu.com/security/notices/USN-5845-2",
+            "https://ubuntu.com/security/notices/USN-6564-1",
+            "https://ubuntu.com/security/notices/USN-7894-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-0286",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:24.267Z",
+          "LastModifiedDate": "2025-11-04T20:16:16.35Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-50782",
+          "VendorIDs": [
+            "GHSA-3ww4-gg4f-jr7f"
+          ],
+          "PkgName": "cryptography",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/cryptography@3.2.1",
+            "UID": "a30aea7d3b08e032"
+          },
+          "InstalledVersion": "3.2.1",
+          "FixedVersion": "42.0.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-50782",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:2b7658d9705d1134b8bbc7028b735193de31b4e8fdef7c0ec124caa8480ef3fc",
+          "Title": "python-cryptography: Bleichenbacher timing oracle attack against RSA decryption - incomplete fix for CVE-2020-25659",
+          "Description": "A flaw was found in the python-cryptography package. This issue may allow a remote attacker to decrypt captured messages in TLS servers that use RSA key exchanges, which may lead to exposure of confidential or sensitive data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-203"
+          ],
+          "VendorSeverity": {
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-50782",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2254432",
+            "https://github.com/openssl/openssl/pull/13817",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/issues/9785",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-50782",
+            "https://people.redhat.com/~hkario/marvin/",
+            "https://ubuntu.com/security/notices/USN-6663-1",
+            "https://ubuntu.com/security/notices/USN-6673-1",
+            "https://ubuntu.com/security/notices/USN-6673-2",
+            "https://www.couchbase.com/alerts",
+            "https://www.couchbase.com/alerts/",
+            "https://www.cve.org/CVERecord?id=CVE-2023-50782"
+          ],
+          "PublishedDate": "2024-02-05T21:15:11.183Z",
+          "LastModifiedDate": "2026-03-24T12:16:08.55Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-26007",
+          "VendorIDs": [
+            "GHSA-r6ph-v2qm-q3c2"
+          ],
+          "PkgName": "cryptography",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/cryptography@3.2.1",
+            "UID": "a30aea7d3b08e032"
+          },
+          "InstalledVersion": "3.2.1",
+          "FixedVersion": "46.0.5",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-26007",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:572f4279686622f4e9efd8b76ade64fc8ea0fea4f125d1e67aad33f4b83c3702",
+          "Title": "cryptography: cryptography Subgroup Attack Due to Missing Subgroup Validation for SECT Curves",
+          "Description": "cryptography is a package designed to expose cryptographic primitives and recipes to Python developers. Prior to 46.0.5, the public_key_from_numbers (or EllipticCurvePublicNumbers.public_key()), EllipticCurvePublicNumbers.public_key(), load_der_public_key() and load_pem_public_key() functions do not verify that the point belongs to the expected prime-order subgroup of the curve. This missing validation allows an attacker to provide a public key point P from a small-order subgroup. This can lead to security issues in various situations, such as the most commonly used signature verification (ECDSA) and shared key negotiation (ECDH). When the victim computes the shared secret as S = [victim_private_key]P via ECDH, this leaks information about victim_private_key mod (small_subgroup_order). For curves with cofactor \u003e 1, this reveals the least significant bits of the private key. When these weak public keys are used in ECDSA , it's easy to forge signatures on the small subgroup. Only SECT curves are impacted by this. This vulnerability is fixed in 46.0.5.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-345"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "ghsa": 3,
+            "nvd": 2,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "V40Score": 8.2
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/02/10/4",
+            "https://access.redhat.com/errata/RHSA-2026:12176",
+            "https://access.redhat.com/security/cve/CVE-2026-26007",
+            "https://bugzilla.redhat.com/2438762",
+            "https://bugzilla.redhat.com/2447194",
+            "https://bugzilla.redhat.com/2448553",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2438762",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2447194",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2448553",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-26007",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-30922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32597",
+            "https://errata.almalinux.org/8/ALSA-2026-12176.html",
+            "https://errata.rockylinux.org/RLSA-2026:19355",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/commit/0eebb9dbb6343d9bc1d91e5a2482ed4e054a6d8c",
+            "https://github.com/pyca/cryptography/releases/tag/46.0.5",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-r6ph-v2qm-q3c2",
+            "https://linux.oracle.com/cve/CVE-2026-26007.html",
+            "https://linux.oracle.com/errata/ELSA-2026-12176.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-26007",
+            "https://ubuntu.com/security/notices/USN-8087-1",
+            "https://ubuntu.com/security/notices/USN-8087-3",
+            "https://www.cve.org/CVERecord?id=CVE-2026-26007"
+          ],
+          "PublishedDate": "2026-02-10T22:17:00.307Z",
+          "LastModifiedDate": "2026-02-23T15:40:33.787Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-33503",
+          "VendorIDs": [
+            "GHSA-q2q7-5pp4-w6pg"
+          ],
+          "PkgName": "urllib3",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/urllib3@1.26.4",
+            "UID": "d151e7a6a6c80369"
+          },
+          "InstalledVersion": "1.26.4",
+          "FixedVersion": "1.26.5",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-33503",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:fb8984b7a33ce4b9816e3cebe5a9c7f73013e6ff66ae69cf99d05a32f98e1745",
+          "Title": "python-urllib3: ReDoS in the parsing of authority part of URL",
+          "Description": "An issue was discovered in urllib3 before 1.26.5. When provided with a URL containing many @ characters in the authority component, the authority regular expression exhibits catastrophic backtracking, causing a denial of service if a URL were passed as a parameter or redirected to via an HTTP redirect.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-33503",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1772014",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1928707",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1928904",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1935913",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1941534",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1955615",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1957458",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1962856",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1968074",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18874",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27619",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28493",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20095",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23336",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28957",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-29921",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33503",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3426",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3572",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42771",
+            "https://errata.almalinux.org/8/ALSA-2021-4162.html",
+            "https://errata.rockylinux.org/RLSA-2021:4162",
+            "https://github.com/advisories/GHSA-q2q7-5pp4-w6pg",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/urllib3/PYSEC-2021-108.yaml",
+            "https://github.com/urllib3/urllib3",
+            "https://github.com/urllib3/urllib3/commit/2d4a3fee6de2fa45eb82169361918f759269b4ec",
+            "https://github.com/urllib3/urllib3/commit/5b047b645f5f93900d5e2fc31230848c25eb1f5f#diff-52026d639119bf1e0364836b4e8a18bd9ed3c95c6ba39b26534a5057a65e35bbR65",
+            "https://github.com/urllib3/urllib3/security/advisories/GHSA-q2q7-5pp4-w6pg",
+            "https://linux.oracle.com/cve/CVE-2021-33503.html",
+            "https://linux.oracle.com/errata/ELSA-2021-4162.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/6SCV7ZNAHS3E6PBFLJGENCDRDRWRZZ6W/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/FMUGWEAUYGGHTPPXT6YBD53WYXQGVV73/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6SCV7ZNAHS3E6PBFLJGENCDRDRWRZZ6W",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FMUGWEAUYGGHTPPXT6YBD53WYXQGVV73",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-33503",
+            "https://security.gentoo.org/glsa/202107-36",
+            "https://ubuntu.com/security/notices/USN-5812-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-33503",
+            "https://www.oracle.com/security-alerts/cpuoct2021.html"
+          ],
+          "PublishedDate": "2021-06-29T11:15:07.847Z",
+          "LastModifiedDate": "2024-11-21T06:08:58.03Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-43804",
+          "VendorIDs": [
+            "GHSA-v845-jxx5-vc9f"
+          ],
+          "PkgName": "urllib3",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/urllib3@1.26.4",
+            "UID": "d151e7a6a6c80369"
+          },
+          "InstalledVersion": "1.26.4",
+          "FixedVersion": "2.0.6, 1.26.17",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-43804",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:8b218989f73736fd4eb33716fdd77b7e022d4f7b8d3105f5092620d2332b0f2f",
+          "Title": "python-urllib3: Cookie request header isn't stripped during cross-origin redirects",
+          "Description": "urllib3 is a user-friendly HTTP client library for Python. urllib3 doesn't treat the `Cookie` HTTP header special or provide any helpers for managing cookies over HTTP, that is the responsibility of the user. However, it is possible for a user to specify a `Cookie` header and unknowingly leak information via HTTP redirects to a different origin if that user doesn't disable redirects explicitly. This issue has been patched in urllib3 version 1.26.17 or 2.0.5.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-200"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 3,
+            "cbl-mariner": 2,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "V3Score": 5.9,
+              "V40Score": 7.4
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 8.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2024:2987",
+            "https://access.redhat.com/security/cve/CVE-2023-43804",
+            "https://bugzilla.redhat.com/2158559",
+            "https://bugzilla.redhat.com/2240059",
+            "https://bugzilla.redhat.com/2242493",
+            "https://bugzilla.redhat.com/2249755",
+            "https://bugzilla.redhat.com/2257854",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2158559",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2240059",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2242493",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2249755",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2257854",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-40897",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-48560",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-48565",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-43804",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-22195",
+            "https://errata.almalinux.org/8/ALSA-2024-2987.html",
+            "https://errata.rockylinux.org/RLSA-2024:2987",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/urllib3/PYSEC-2023-192.yaml",
+            "https://github.com/urllib3/urllib3",
+            "https://github.com/urllib3/urllib3/commit/01220354d389cd05474713f8c982d05c9b17aafb",
+            "https://github.com/urllib3/urllib3/commit/644124ecd0b6e417c527191f866daa05a5a2056d",
+            "https://github.com/urllib3/urllib3/security/advisories/GHSA-v845-jxx5-vc9f",
+            "https://linux.oracle.com/cve/CVE-2023-43804.html",
+            "https://linux.oracle.com/errata/ELSA-2024-2987.html",
+            "https://lists.debian.org/debian-lts-announce/2023/10/msg00012.html",
+            "https://lists.debian.org/debian-lts-announce/2024/12/msg00020.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5F5CUBAN5XMEBVBZPHFITBLMJV5FIJJ5",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5F5CUBAN5XMEBVBZPHFITBLMJV5FIJJ5/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I3PR7C6RJ6JUBQKIJ644DMIJSUP36VDY",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I3PR7C6RJ6JUBQKIJ644DMIJSUP36VDY/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NDAGZXYJ7H2G3SB47M453VQVNAWKAEJJ",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NDAGZXYJ7H2G3SB47M453VQVNAWKAEJJ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-43804",
+            "https://security.netapp.com/advisory/ntap-20241213-0007",
+            "https://security.netapp.com/advisory/ntap-20241213-0007/",
+            "https://ubuntu.com/security/notices/USN-6473-1",
+            "https://ubuntu.com/security/notices/USN-6473-2",
+            "https://www.cve.org/CVERecord?id=CVE-2023-43804",
+            "https://www.vicarius.io/vsociety/posts/cve-2023-43804-urllib3-vulnerability-3"
+          ],
+          "PublishedDate": "2023-10-04T17:15:10.163Z",
+          "LastModifiedDate": "2025-11-03T22:16:27.767Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-66418",
+          "VendorIDs": [
+            "GHSA-gm62-xv2j-4w53"
+          ],
+          "PkgName": "urllib3",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/urllib3@1.26.4",
+            "UID": "d151e7a6a6c80369"
+          },
+          "InstalledVersion": "1.26.4",
+          "FixedVersion": "2.6.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-66418",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:8f7701ca984577ea9089b3898c5b912445a1fe117c4cb09c10e13a5e438acd98",
+          "Title": "urllib3: urllib3: Unbounded decompression chain leads to resource exhaustion",
+          "Description": "urllib3 is a user-friendly HTTP client library for Python. Starting in version 1.24 and prior to 2.6.0, the number of links in the decompression chain was unbounded allowing a malicious server to insert a virtually unlimited number of compression steps leading to high CPU usage and massive memory allocation for the decompressed data. This vulnerability is fixed in 2.6.0.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+              "V40Score": 8.9
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:1254",
+            "https://access.redhat.com/security/cve/CVE-2025-66418",
+            "https://bugzilla.redhat.com/2419455",
+            "https://bugzilla.redhat.com/2419467",
+            "https://bugzilla.redhat.com/2427726",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2419455",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2419467",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2427726",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-66418",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-66471",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-21441",
+            "https://errata.almalinux.org/8/ALSA-2026-1254.html",
+            "https://errata.rockylinux.org/RLSA-2026:1087",
+            "https://github.com/urllib3/urllib3",
+            "https://github.com/urllib3/urllib3/commit/24d7b67eac89f94e11003424bcf0d8f7b72222a8",
+            "https://github.com/urllib3/urllib3/security/advisories/GHSA-gm62-xv2j-4w53",
+            "https://linux.oracle.com/cve/CVE-2025-66418.html",
+            "https://linux.oracle.com/errata/ELSA-2026-1254.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-66418",
+            "https://ubuntu.com/security/notices/USN-7927-1",
+            "https://ubuntu.com/security/notices/USN-8010-1",
+            "https://ubuntu.com/security/notices/USN-8344-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-66418",
+            "https://www.openwall.com/lists/oss-security/2025/12/05/4"
+          ],
+          "PublishedDate": "2025-12-05T16:15:51.053Z",
+          "LastModifiedDate": "2025-12-10T16:08:32.193Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-66471",
+          "VendorIDs": [
+            "GHSA-2xpw-w6gg-jr37"
+          ],
+          "PkgName": "urllib3",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/urllib3@1.26.4",
+            "UID": "d151e7a6a6c80369"
+          },
+          "InstalledVersion": "1.26.4",
+          "FixedVersion": "2.6.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-66471",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:d323c6d15e263b99169b50bfa14641e0fb5c656bb8346958100d18a497106271",
+          "Title": "urllib3: urllib3 Streaming API improperly handles highly compressed data",
+          "Description": "urllib3 is a user-friendly HTTP client library for Python. Starting in version 1.0 and prior to 2.6.0, the Streaming API improperly handles highly compressed data. urllib3's streaming API is designed for the efficient handling of large HTTP responses by reading the content in chunks, rather than loading the entire response body into memory at once. When streaming a compressed response, urllib3 can perform decoding or decompression based on the HTTP Content-Encoding header (e.g., gzip, deflate, br, or zstd). The library must read compressed data from the network and decompress it until the requested chunk size is met. Any resulting decompressed data that exceeds the requested amount is held in an internal buffer for the next read operation. The decompression logic could cause urllib3 to fully decode a small amount of highly compressed data in a single operation. This can result in excessive resource consumption (high CPU usage and massive memory allocation for the decompressed data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-409"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+              "V40Score": 8.9
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:1254",
+            "https://access.redhat.com/security/cve/CVE-2025-66471",
+            "https://bugzilla.redhat.com/2419455",
+            "https://bugzilla.redhat.com/2419467",
+            "https://bugzilla.redhat.com/2427726",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2419455",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2419467",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2427726",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-66418",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-66471",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-21441",
+            "https://errata.almalinux.org/8/ALSA-2026-1254.html",
+            "https://errata.rockylinux.org/RLSA-2026:1087",
+            "https://github.com/urllib3/urllib3",
+            "https://github.com/urllib3/urllib3/commit/c19571de34c47de3a766541b041637ba5f716ed7",
+            "https://github.com/urllib3/urllib3/security/advisories/GHSA-2xpw-w6gg-jr37",
+            "https://linux.oracle.com/cve/CVE-2025-66471.html",
+            "https://linux.oracle.com/errata/ELSA-2026-1254.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-66471",
+            "https://ubuntu.com/security/notices/USN-7927-1",
+            "https://ubuntu.com/security/notices/USN-7927-2",
+            "https://ubuntu.com/security/notices/USN-7927-3",
+            "https://ubuntu.com/security/notices/USN-8344-1",
+            "https://ubuntu.com/security/notices/USN-8344-2",
+            "https://ubuntu.com/security/notices/USN-8344-3",
+            "https://www.cve.org/CVERecord?id=CVE-2025-66471",
+            "https://www.openwall.com/lists/oss-security/2025/12/05/4"
+          ],
+          "PublishedDate": "2025-12-05T17:16:04.4Z",
+          "LastModifiedDate": "2025-12-10T16:10:33.5Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-21441",
+          "VendorIDs": [
+            "GHSA-38jv-5279-wg99"
+          ],
+          "PkgName": "urllib3",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/urllib3@1.26.4",
+            "UID": "d151e7a6a6c80369"
+          },
+          "InstalledVersion": "1.26.4",
+          "FixedVersion": "2.6.3",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-21441",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:c01d148901d655d8cd01d438bca35886f712103f7f1b1f0a0a9cd5f657075b8b",
+          "Title": "urllib3: urllib3 vulnerable to decompression-bomb safeguard bypass when following HTTP redirects (streaming API)",
+          "Description": "urllib3 is an HTTP client library for Python. urllib3's streaming API is designed for the efficient handling of large HTTP responses by reading the content in chunks, rather than loading the entire response body into memory at once. urllib3 can perform decoding or decompression based on the HTTP `Content-Encoding` header (e.g., `gzip`, `deflate`, `br`, or `zstd`). When using the streaming API, the library decompresses only the necessary bytes, enabling partial content consumption. Starting in version 1.22 and prior to version 2.6.3, for HTTP redirect responses, the library would read the entire response body to drain the connection and decompress the content unnecessarily. This decompression occurred even before any read methods were called, and configured read limits did not restrict the amount of decompressed data. As a result, there was no safeguard against decompression bombs. A malicious server could exploit this to trigger excessive resource consumption on the client. Applications and libraries are affected when they stream content from untrusted sources by setting `preload_content=False` when they do not disable redirects. Users should upgrade to at least urllib3 v2.6.3, in which the library does not decode content of redirect responses when `preload_content=False`. If upgrading is not immediately possible, disable redirects by setting `redirect=False` for requests to untrusted source.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-409"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+              "V3Score": 7.5,
+              "V40Score": 8.9
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:1254",
+            "https://access.redhat.com/security/cve/CVE-2026-21441",
+            "https://bugzilla.redhat.com/2419455",
+            "https://bugzilla.redhat.com/2419467",
+            "https://bugzilla.redhat.com/2427726",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2419455",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2419467",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2427726",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-66418",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-66471",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-21441",
+            "https://errata.almalinux.org/8/ALSA-2026-1254.html",
+            "https://errata.rockylinux.org/RLSA-2026:1087",
+            "https://github.com/urllib3/urllib3",
+            "https://github.com/urllib3/urllib3/commit/8864ac407bba8607950025e0979c4c69bc7abc7b",
+            "https://github.com/urllib3/urllib3/security/advisories/GHSA-38jv-5279-wg99",
+            "https://linux.oracle.com/cve/CVE-2026-21441.html",
+            "https://linux.oracle.com/errata/ELSA-2026-1254.html",
+            "https://lists.debian.org/debian-lts-announce/2026/01/msg00017.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-21441",
+            "https://ubuntu.com/security/notices/USN-7955-1",
+            "https://ubuntu.com/security/notices/USN-7955-2",
+            "https://ubuntu.com/security/notices/USN-8010-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-21441"
+          ],
+          "PublishedDate": "2026-01-07T22:15:44.04Z",
+          "LastModifiedDate": "2026-01-23T09:15:47.823Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-44431",
+          "VendorIDs": [
+            "GHSA-qccp-gfcp-xxvc"
+          ],
+          "PkgName": "urllib3",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/urllib3@1.26.4",
+            "UID": "d151e7a6a6c80369"
+          },
+          "InstalledVersion": "1.26.4",
+          "FixedVersion": "2.7.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-44431",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:905234d6a24481ddabd8ce16b2c7a446646656212f677d18ae539639af4d0923",
+          "Title": "urllib3: urllib3: Information disclosure via cross-origin redirects forwarding sensitive headers",
+          "Description": "urllib3 is an HTTP client library for Python. From 1.23 to before 2.7.0, cross-origin redirects followed from the low-level API via ProxyManager.connection_from_url().urlopen(..., assert_same_host=False) still forward these sensitive headers. This vulnerability is fixed in 2.7.0.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-200"
+          ],
+          "VendorSeverity": {
+            "azure": 3,
+            "ghsa": 3,
+            "nvd": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "V40Vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "V3Score": 5.3,
+              "V40Score": 8.2
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-44431",
+            "https://github.com/urllib3/urllib3",
+            "https://github.com/urllib3/urllib3/security/advisories/GHSA-qccp-gfcp-xxvc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-44431",
+            "https://ubuntu.com/security/notices/USN-8379-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-44431"
+          ],
+          "PublishedDate": "2026-05-13T16:16:57.15Z",
+          "LastModifiedDate": "2026-05-14T13:56:27.263Z"
+        }
+      ]
+    }
+  ]
+}
