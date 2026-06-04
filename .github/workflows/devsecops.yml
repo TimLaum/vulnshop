@@ -86,14 +86,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Trivy fs (JSON)
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          scan-type: fs
-          scan-ref: app/
-          severity: HIGH,CRITICAL
-          format: json
-          output: trivy-fs.json
+      - name: Trivy fs (JSON) via Docker
+        run: |
+          docker run --rm -v "${{ github.workspace }}:/work" \
+            aquasec/trivy:0.71.0 fs /work/app \
+            --severity HIGH,CRITICAL --format json --output /work/trivy-fs.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -126,31 +123,22 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: docker-image
-      - name: Charger l'image
-        run: docker load -i vulnshop-image.tar
       - name: Trivy image (rapport JSON — non bloquant)
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          scan-type: image
-          image-ref: vulnshop:${{ github.sha }}
-          severity: CRITICAL,HIGH,MEDIUM
-          format: json
-          output: trivy-image.json
-          exit-code: "0"
+        run: |
+          docker run --rm -v "${{ github.workspace }}:/work" \
+            aquasec/trivy:0.71.0 image --input /work/vulnshop-image.tar \
+            --severity CRITICAL,HIGH,MEDIUM --format json --output /work/trivy-image.json --exit-code 0
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: trivy-image-report
           path: trivy-image.json
-      # TODO 6.2 : le job BLOQUE sur les CVE CRITICAL
+      # TODO 6.2 : le job BLOQUE sur les CVE CRITICAL (fixables)
       - name: Trivy image — gate CRITICAL (bloquant)
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          scan-type: image
-          image-ref: vulnshop:${{ github.sha }}
-          severity: CRITICAL
-          ignore-unfixed: true
-          exit-code: "1"
+        run: |
+          docker run --rm -v "${{ github.workspace }}:/work" \
+            aquasec/trivy:0.71.0 image --input /work/vulnshop-image.tar \
+            --severity CRITICAL --ignore-unfixed --exit-code 1
 
   # ─── ÉTAPE 4bis : Audit de configuration Dockerfile ───────────────────────
   trivy-config:
@@ -158,13 +146,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Trivy config
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          scan-type: config
-          scan-ref: app/Dockerfile
-          format: json
-          output: trivy-config.json
+      - name: Trivy config (Dockerfile) via Docker
+        run: |
+          docker run --rm -v "${{ github.workspace }}:/work" \
+            aquasec/trivy:0.71.0 config /work/app/Dockerfile \
+            --format json --output /work/trivy-config.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -184,9 +170,11 @@ jobs:
           python-version: "3.9"
       - run: pip install jinja2 --quiet
       - uses: actions/download-artifact@v4
+        continue-on-error: true
         with:
           name: bandit-report
       - uses: actions/download-artifact@v4
+        continue-on-error: true
         with:
           name: trivy-image-report
       # generate_report.py attend bandit-report.json et trivy-image-report.json
